@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dance Quiz Game</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffe4ec;
+      text-align: center;
+      padding: 50px;
+    }
+
+    h1 {
+      color: #ff69b4;
+    }
+
+    #question {
+      font-size: 26px;
+      margin: 20px 0;
+    }
+
+    button {
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      margin: 8px;
+      border-radius: 12px;
+      font-size: 16px;
+      cursor: pointer;
+      display: block;
+      width: 250px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    button:hover {
+      background-color: #ff85c1;
+    }
+
+    #result {
+      font-size: 20px;
+      margin-top: 20px;
+    }
+
+    #score {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>💃 Dance Quiz Game</h1>
+
+<h2 id="question">Loading...</h2>
+
+<div id="buttons">
+  <button onclick="answer('a')" id="aBtn"></button>
+  <button onclick="answer('b')" id="bBtn"></button>
+  <button onclick="answer('c')" id="cBtn"></button>
+</div>
+
+<p id="result"></p>
+<p id="score"></p>
+
+<script>
+let questions = [
+  {
+    question: "What is a jump called in a split position?",
+    options: {
+      a: "Leap",
+      b: "Turn",
+      c: "Kick"
+    },
+    correct: "a"
+  },
+  {
+    question: "What style uses pointe shoes?",
+    options: {
+      a: "Jazz",
+      b: "Ballet",
+      c: "Hip hop"
+    },
+    correct: "b"
+  },
+  {
+    question: "What style involves shoes that make noise?",
+    options: {
+      a: "Tap",
+      b: "Lyrical",
+      c: "Contemporary"
+    },
+    correct: "a"
+  }
+];
+
+let current = 0;
+let score = 0;
+
+loadQuestion();
+
+function loadQuestion() {
+  let q = questions[current];
+
+  document.getElementById("question").innerText = q.question;
+
+  document.getElementById("aBtn").innerText = "A: " + q.options.a;
+  document.getElementById("bBtn").innerText = "B: " + q.options.b;
+  document.getElementById("cBtn").innerText = "C: " + q.options.c;
+
+  document.getElementById("result").innerText = "";
+  document.getElementById("score").innerText = "Score: " + score + "/" + questions.length;
+}
+
+function answer(choice) {
+  if (choice === questions[current].correct) {
+    score++;
+    document.getElementById("result").innerText = "Correct! 💖";
+  } else {
+    document.getElementById("result").innerText = "Not quite, try the next one 💕";
+  }
+
+  current++;
+
+  if (current < questions.length) {
+    setTimeout(loadQuestion, 800);
+  } else {
+    setTimeout(() => {
+      document.getElementById("question").innerText = "You finished the quiz! 🎉";
+      document.getElementById("buttons").style.display = "none";
+      document.getElementById("result").innerText = "Final Score: " + score + "/" + questions.length;
+    }, 800);
+  }
+}
+</script>
+<a href="index.html">Back Home</a>
+</body>
+</html>

@@ -1,0 +1,104 @@
+/* ===== RESET ===== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #ff69b4; /* HOT PINK */
+  display: fixed;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 30px;
+  z-index: 1000;
+  text-size-adjust: 50px;
+}
+img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.logo {
+  color: white;
+  font-weight: bold;
+}
+
+.nav-links a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* ===== HERO IMAGE ===== */
+.hero {
+  height: 100vh;
+
+  background: linear-gradient(
+      rgba(0,0,0,0.4),
+      rgba(0,0,0,0.4)
+    ),
+    url("../Images/Sunsetimage.JPG");
+
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-text {
+  color: white;
+}
+
+.hero-text h1 {
+  font-size: 60px;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  padding: 115px 10px;
+  text-align: center;
+  scroll-margin-top: 80px;
+}
+
+.pink {
+  background-color: #ffe4ec;
+}
+
+.white {
+  background-color: white;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #ff69b4;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+}
+
+.btn:hover {
+  background-color: #ff85c1;
+}
+.section{
+  padding:120px 20px;
+  text-align: center;
+  border-bottom: 5px solid black
+}
